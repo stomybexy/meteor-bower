@@ -1,6 +1,6 @@
 # Meteor-Bower
 
-Include bower dependencies in your meteor package. 
+Include bower dependencies in your meteor packages. 
 
 ## Usage
 Add a bower.json file in your package and api.use this package. That's all.
