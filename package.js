@@ -25,7 +25,7 @@ Package.registerBuildPlugin({
         "underscore@1.0.4"
     ],
     npmDependencies: {
-        "bower": "1.7.7"
+        "bower": "1.5.2"
     },
     sources: [
         "installer.js",
