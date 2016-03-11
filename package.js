@@ -2,9 +2,9 @@ Package.describe({
     name: 'jonatan:bower',
     version: '0.0.1',
     // Brief, one-line summary of the package.
-    summary: '',
+    summary: 'Add bower dependencies in meteor package.',
     // URL to the Git repository containing the source code for this package.
-    git: '',
+    git: 'https://github.com/stomybexy/meteor-bower.git',
     // By default, Meteor will default to using README.md for documentation.
     // To avoid submitting documentation, set this field to null.
     documentation: 'README.md'
@@ -13,7 +13,6 @@ Package.describe({
 Package.onUse(function (api) {
     api.versionsFrom('1.2.1');
     api.use('ecmascript');
-    // api.use('pixto:polymer-installer@0.1.0')
     api.use("isobuild:compiler-plugin@1.0.0");
 
 });
@@ -23,8 +22,7 @@ Package.registerBuildPlugin({
     name: "bower-compiler",
     use: [
         "meteor",
-        "underscore@1.0.4",
-        // 'pixto:polymer-installer@0.1.0'
+        "underscore@1.0.4"
     ],
     npmDependencies: {
         "bower": "1.7.7"
