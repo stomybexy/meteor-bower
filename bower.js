@@ -14,7 +14,7 @@ BowerCompiler.prototype.processFilesForTarget = function (files) {
     }
     var globalCfg = {}; // Get .bowerrc
     try {
-        globalCfg = JSON.parse(fs.readFileSync('public/.bowerrc', 'utf8'));
+        globalCfg = JSON.parse(fs.readFileSync('.bowerrc', 'utf8'));
         // console.log(globalCfg);
     } catch (e) {
         // console.log(e)
@@ -24,7 +24,7 @@ BowerCompiler.prototype.processFilesForTarget = function (files) {
     var directory = globalCfg.directory || ('/public' + '/bower_components');
     console.log("Installing bower dependencies into", directory ,"... ");
     files.forEach(function (file) {
-        
+
         try {
             var config = JSON.parse(file.getContentsAsString());
         } catch (e) {
@@ -66,12 +66,12 @@ BowerCompiler.prototype.processFilesForTarget = function (files) {
                     Bower.install(dependencies, { save: true, forceLatest: true }, { directory: directory });
                 } catch (f) {
                     errors.push(f);
-                    // console.log(errors); 
+                    // console.log(errors);
                     file.error({
                         message: 'error installing bower dependencies : ' + errors
                     });
                 }
-                
+
             }
 
         };

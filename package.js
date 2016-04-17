@@ -11,7 +11,7 @@ Package.describe({
 });
 
 Package.onUse(function (api) {
-    api.versionsFrom('1.2.1');
+    api.versionsFrom('1.3.1');
     api.use('ecmascript');
     api.use("isobuild:compiler-plugin@1.0.0");
 
@@ -25,7 +25,7 @@ Package.registerBuildPlugin({
         "underscore@1.0.4"
     ],
     npmDependencies: {
-        "bower": "1.5.2"
+        "bower": "1.7.9"
     },
     sources: [
         "installer.js",
