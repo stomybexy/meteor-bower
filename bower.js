@@ -1,6 +1,5 @@
 // Write your package code here!
-var fs = Npm.require("fs");
-
+const fs = Plugin.fs;
 
 
 
@@ -19,7 +18,7 @@ BowerCompiler.prototype.processFilesForTarget = function (files) {
     } catch (e) {
         // console.log(e)
         globalCfg = {}
-    }
+    } 
 
     var directory = globalCfg.directory || ('/public' + '/bower_components');
     console.log("Installing bower dependencies into", directory ,"... ");
