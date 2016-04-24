@@ -1,6 +1,6 @@
 Package.describe({
     name: 'jonatan:bower',
-    version: '0.0.3',
+    version: '0.0.3_3',
     // Brief, one-line summary of the package.
     summary: 'Add bower dependencies in meteor packages.',
     // URL to the Git repository containing the source code for this package.
@@ -10,9 +10,8 @@ Package.describe({
     documentation: 'README.md'
 });
 
-Package.onUse(function (api) {
+Package.onUse(function(api) {
     api.versionsFrom('1.3.1');
-    api.use('ecmascript');
     api.use("isobuild:compiler-plugin@1.0.0");
 
 });
@@ -21,8 +20,10 @@ Package.onUse(function (api) {
 Package.registerBuildPlugin({
     name: "bower-compiler",
     use: [
-        "meteor",
-        "underscore@1.0.4"
+        // "meteor",
+        "underscore@1.0.4",
+        'ecmascript@0.4.2',
+        'meteorhacks:async@1.0.0'
     ],
     npmDependencies: {
         "bower": "1.7.9"
@@ -33,7 +34,7 @@ Package.registerBuildPlugin({
     ]
 });
 
-Package.onTest(function (api) {
+Package.onTest(function(api) {
     api.use('ecmascript');
     api.use('tinytest');
     api.use('jonatan:bower');
